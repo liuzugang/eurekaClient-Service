@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: test-service
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registerWithEureka: true  #注册到eureka
+    fetchRegistry: true   #从eureka获取注册表
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+    preferIpAddress: true
+    metadataMap:
+      instanceId: ${server.port}
+      
+server:
+  port: 2222
